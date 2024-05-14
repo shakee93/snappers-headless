@@ -19,6 +19,9 @@ const config = {
     },
     extend: {
       colors: {
+        snap_blue:"#071C43",
+        snap_yellow:"#f7de00",
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
