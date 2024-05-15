@@ -8,6 +8,7 @@ import { ProductSlideVertial } from "@/components/homepage/ProductSlideVertial";
 import categoriesData from "@/data/categories";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import NewsletterSection from "@/components/homepage/NewsletterSection";
 
 export default function Home() {
   return (
@@ -72,10 +73,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="p-10 w-full h-52 border-[1.5px] rounded-lg">
-        Newsletter section
+      <div className="">
+        <NewsletterSection/>
       </div>
-      <div className="p-10 w-full h-full border-[1.5px] rounded-lg flex flex-col gap-5">
+      <div className="p-10 w-full h-full border-[1.5px] rounded-lg flex flex-col gap-5 mb-28">
         <div>Category section</div>
         <div className="">
           <CategorySlides />
