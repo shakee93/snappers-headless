@@ -48,13 +48,13 @@ export default function Home() {
         </div>
       </div>
       <div className="p-5 border-[1.5px] rounded-lg flex gap-5" id="best-deals">
-        <div className="p-5 w-2/12 border-[1.5px] rounded-lg bg-[#548C2F]">
+        <div className="p-5 w-3/12 border-[1.5px] rounded-lg bg-[#548C2F]">
           <Image
             src={FeatureDeals}
             alt=""
             width={500}
             height={600}
-            className="w-full h-auto "
+            className="w-full h-auto object-fill "
           />
         </div>
         <div className="w-9/12">

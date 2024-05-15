@@ -2,16 +2,10 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '@/public/global/Snappers-yellow.png'
 import Link from 'next/link';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+
 import { ModeToggle } from './header/ModeToggle';
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import AvatarDropdown from './header/AvatarDropdown';
+import { LoginPopup } from './header/LoginPopup';
 
 
 const Header: React.FC = () => {
@@ -34,24 +28,9 @@ const Header: React.FC = () => {
                     </nav>
                 </div>
                 <div className='flex items-center gap-4'>
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className='flex gap-4 items-center'>
-                            <Avatar>
-                                <AvatarImage src="https://github.com/shadcn.png" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <div className='font-bold'>User name</div>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem>Profile</DropdownMenuItem>
-                            <DropdownMenuItem>Billing</DropdownMenuItem>
-                            <DropdownMenuItem>Team</DropdownMenuItem>
-                            <DropdownMenuItem>Subscription</DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                    <ModeToggle />
+                    <AvatarDropdown/>
+                    <LoginPopup/>
+                    {/* <ModeToggle /> */}
                 </div>
             </div>
         </header>

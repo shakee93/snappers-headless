@@ -77,6 +77,7 @@ const config = {
       },
       backgroundImage: {
         'newsletter-bg': "url('../public/newsletter-bg.png')",
+        'form-bg': "url('../public/form-bg.svg')",
       },
     },
   },
