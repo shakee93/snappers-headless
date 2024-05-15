@@ -1,7 +1,7 @@
 import { CartToggle } from "@/components/global/CartToggle";
 import CategoriesTabs from "@/components/global/CategoriesTabs";
 import { CategorySlides } from "@/components/homepage/CategorySlides";
-import { HeroSlides } from "@/components/homepage/HeroSlides";
+import HeroSlides from "@/components/homepage/HeroSlides";
 import { OfferSlides } from "@/components/homepage/OfferSlides";
 import { ProductSlide } from "@/components/homepage/ProductSlide";
 import { ProductSlideVertial } from "@/components/homepage/ProductSlideVertial";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import NewsletterSection from "@/components/homepage/NewsletterSection";
 import FeatureDeals from "@/public/deals-feature.png";
-import SectionHeader from "@/components/global/SectionHeader";
+import SectionHeader from "@/components/global/SectionHeading";
 
 export default function Home() {
   return (
@@ -19,13 +19,13 @@ export default function Home() {
         <CartToggle></CartToggle>
       </div>
       <div className="flex gap-5 h-[375px] " id="hero-section">
-        <div className="relative w-[220px] z-50 border-[1.5px] p-4 rounded-lg shadow-2xl shadow-[#E5E5E5]">
+        <div className="relative grow-0 shrink-0 w-[220px] z-50 border-[1.5px] p-4 rounded-lg shadow-2xl shadow-[#E5E5E5]">
           <CategoriesTabs categories={categoriesData} />
         </div>
-        <div className="w-6/12 z-40">
+        <div className="w-full h-full z-40">
           <HeroSlides />
         </div>
-        <div className="w-3/12 p-5 border-[1.5px] rounded-lg">
+        <div className="w-3/12  p-5 border-[1.5px] rounded-lg">
           featuer section
         </div>
       </div>

@@ -78,6 +78,9 @@ const config = {
       backgroundImage: {
         'newsletter-bg': "url('../public/newsletter-bg.png')",
         'form-bg': "url('../public/form-bg.svg')",
+        'slide-bg-1': "url('../public/slider-bg-1.png')",
+        'slide-bg-2': "url('../public/slider-bg-2.png')",
+        'slide-bg-3': "url('../public/slider-bg-3.png')",
       },
     },
   },

@@ -1,11 +1,11 @@
 import React from 'react';
 
-interface SectionHeaderProps {
+interface SectionHeadingProps {
   className?: string;
   content: React.ReactNode;
 }
 
-const SectionHeader: React.FC<SectionHeaderProps> = ({ className = '', content }) => {
+const SectionHeading: React.FC<SectionHeadingProps> = ({ className = '', content }) => {
   return (
     <div className={`${className} text-3xl font-bold text-blak`}>
       {content}
@@ -13,4 +13,4 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ className = '', content }
   );
 };
 
-export default SectionHeader;
+export default SectionHeading;
