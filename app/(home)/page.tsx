@@ -9,6 +9,8 @@ import categoriesData from "@/data/categories";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import NewsletterSection from "@/components/homepage/NewsletterSection";
+import FeatureDeals from "@/public/deals-feature.png";
+import SectionHeader from "@/components/global/SectionHeader";
 
 export default function Home() {
   return (
@@ -46,38 +48,73 @@ export default function Home() {
         </div>
       </div>
       <div className="p-5 border-[1.5px] rounded-lg flex gap-5" id="best-deals">
-        <div className="p-5 w-4/12 border-[1.5px] rounded-lg">
-          Feature image
+        <div className="p-5 w-2/12 border-[1.5px] rounded-lg bg-[#548C2F]">
+          <Image
+            src={FeatureDeals}
+            alt=""
+            width={500}
+            height={600}
+            className="w-full h-auto "
+          />
         </div>
-        <div className="w-8/12">
+        <div className="w-9/12">
+          <SectionHeader
+            className="categories-heading"
+            content={<div>Best <span className="text-[#EA4B02]">Deals</span> for you</div>} 
+          />
+
           <ProductSlide />
         </div>
       </div>
       <div className="p-5 border-[1.5px] rounded-lg flex gap-5">
         <div className="w-1/3 flex gap-5 p-5 flex-col">
-          <div>Top Selling</div>
+          <div>
+            {" "}
+            <div>
+              <SectionHeader
+                className="3-section-heading"
+                content="Top Selling"
+              />
+              {/* More content */}
+            </div>
+          </div>
           <div>
             <ProductSlideVertial />
           </div>
         </div>
         <div className="w-1/3 flex gap-5 p-5 flex-col">
-          <div>Trending Products</div>
+          <div>
+            <SectionHeader
+              className="3-section-heading"
+              content="Trending Products"
+            />
+          </div>
           <div>
             <ProductSlideVertial />
           </div>
         </div>
         <div className="w-1/3 flex gap-5 p-5 flex-col">
-          <div>Recently Added</div>
+          <div>
+            <SectionHeader
+              className="3-section-heading"
+              content="Recently Added"
+            />
+          </div>
           <div>
             <ProductSlideVertial />
           </div>
         </div>
       </div>
       <div className="">
-        <NewsletterSection/>
+        <NewsletterSection />
       </div>
       <div className="p-10 w-full h-full border-[1.5px] rounded-lg flex flex-col gap-5 mb-28">
-        <div>Category section</div>
+        <div>
+          <SectionHeader
+            className="categories-heading"
+            content="Our Categories"
+          />
+        </div>
         <div className="">
           <CategorySlides />
         </div>
