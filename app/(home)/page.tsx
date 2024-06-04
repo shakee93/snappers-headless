@@ -58,12 +58,12 @@ export default function Home() {
           <Image
             src={FeatureDeals}
             alt=""
-            width={500}
-            height={600}
-            className="w-full h-auto object-fill "
+            width={300}
+            height={300}
+            className="w-auto m-auto h-full object-fill "
           />
         </div>
-        <div className="w-9/12">
+        <div className="w-9/12 bg-white/50">
           <SectionHeader
             className="categories-heading"
             content={
