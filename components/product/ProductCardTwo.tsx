@@ -1,6 +1,8 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
+import WishlistButton from "./WishlistButton";
 
 interface Product {
   productName: string;
@@ -18,6 +20,17 @@ interface Props {
 const ProductCardTwo: React.FC<Props> = ({ product }) => {
   const isInStock = product.stockStatus.toLowerCase() === "in stock";
   const savedAmount = product.priceBeforeDiscount - product.priceAfterDiscount;
+  const [isInWishlist, setIsInWishlist] = useState(false);
+  const [wishlistLoading, setWishlistLoading] = useState(false);
+
+  const handleToggleWishlist = () => {
+    setWishlistLoading(true); // Set loading state while processing the action
+    // Simulate API call to toggle wishlist status (replace with actual API call)
+    setTimeout(() => {
+      setIsInWishlist((prevState) => !prevState);
+      setWishlistLoading(false);
+    }, 1000);
+  };
 
   return (
     <div className="product-card-1 bg-white w-[230px] p-1 rounded-xl">
@@ -66,6 +79,13 @@ const ProductCardTwo: React.FC<Props> = ({ product }) => {
             <div className="text-xs font-bold">Rs. {savedAmount.toFixed(2)}</div>
           </div>
         )}
+        <div className="absolute top-3 right-3">
+          <WishlistButton
+            isInWishlist={isInWishlist}
+            onToggleWishlist={handleToggleWishlist}
+            loading={wishlistLoading}
+          />
+        </div>
       </div>
     </div>
   );
