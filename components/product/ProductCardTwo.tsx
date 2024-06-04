@@ -17,10 +17,11 @@ interface Props {
 
 const ProductCardTwo: React.FC<Props> = ({ product }) => {
   const isInStock = product.stockStatus.toLowerCase() === "in stock";
+  const savedAmount = product.priceBeforeDiscount - product.priceAfterDiscount;
 
   return (
-    <div className="product-card-1 bg-white w-[230px] p-2  rounded-xl">
-      <div className="rounded-xl border-[1px] hover:shadow-xl p-3 shadow-md shadow-gray-300">
+    <div className="product-card-1 bg-white w-[230px] p-1 rounded-xl">
+      <div className="rounded-xl relative border-[1px] hover:shadow-xl p-4 shadow-md shadow-gray-300">
         <div className="flex flex-col gap">
           <div className="w-full border-dashed border-b-2">
             <Image
@@ -38,25 +39,33 @@ const ProductCardTwo: React.FC<Props> = ({ product }) => {
           </div>
           <div className="flex justify-between items-center">
             <div
-              className={`px-2 py-1 rounded-xl text-xs ${
+              className={`px-2 py-1 font-semibold min-w-max rounded-xl text-xs ${
                 isInStock
-                  ? "text-[#2DC90F] bg-[#DBFBD6]"
-                  : "text-[#ff5722] bg-[#ffeee8]"
+                  ? "text-[#2DC90F] border-[1px] border-[#2DC90F] bg-[#DBFBD6]"
+                  : "text-[#ff5722] border-[1px] border-[#ff5722] bg-[#ffeee8]"
               }`}
             >
               {product.stockStatus}
             </div>
-            <div className="flex flex-col items-end">
-              <div className="text-[#ff5722] text-[13px]">
+            <div className="flex flex-col items-end gap-0">
+              <div className="text-[#ff5722] text-[13px] font-medium">
                 <s>Rs. {product.priceBeforeDiscount.toFixed(2)}</s>
               </div>
-              <div>Rs. {product.priceAfterDiscount.toFixed(2)}</div>
+              <div className="font-bold leading-none min-w-max">
+                Rs. {product.priceAfterDiscount.toFixed(2)}
+              </div>
             </div>
           </div>
           <div>
             <AddToCartButton isInStock={isInStock} />
           </div>
         </div>
+        {savedAmount > 0 && (
+          <div className="absolute rounded-xl bg-snap_yellow flex flex-col justify-center items-center p-2 top-3 font-medium">
+            <div className="text-xs">Save</div>
+            <div className="text-xs font-bold">Rs. {savedAmount.toFixed(2)}</div>
+          </div>
+        )}
       </div>
     </div>
   );

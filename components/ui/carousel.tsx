@@ -60,6 +60,7 @@ const Carousel = React.forwardRef<
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
+        loop: true,
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
@@ -119,6 +120,23 @@ const Carousel = React.forwardRef<
         api?.off("select", onSelect)
       }
     }, [api, onSelect])
+
+    // Auto-slide functionality
+    React.useEffect(() => {
+      if (!api) {
+        return
+      }
+
+      const autoSlide = () => {
+        api.scrollNext()
+      }
+
+      const interval = setInterval(autoSlide, 3000) // Adjust the interval as needed
+
+      return () => {
+        clearInterval(interval)
+      }
+    }, [api])
 
     return (
       <CarouselContext.Provider
