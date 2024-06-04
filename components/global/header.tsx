@@ -2,8 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import Logo from '@/public/global/Snappers-yellow.png'
 import Link from 'next/link';
-
-import { ModeToggle } from './header/ModeToggle';
 import AvatarDropdown from './header/AvatarDropdown';
 import { LoginPopup } from './header/LoginPopup';
 
@@ -30,7 +28,6 @@ const Header: React.FC = () => {
                 <div className='flex items-center gap-4'>
                     <AvatarDropdown/>
                     <LoginPopup/>
-                    {/* <ModeToggle /> */}
                 </div>
             </div>
         </header>

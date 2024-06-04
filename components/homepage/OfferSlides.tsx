@@ -1,6 +1,7 @@
 import * as React from "react"
+import productsData from "@/data/products";
+import ProductCardOne from "@/components/product/ProductCardOne";
 
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
@@ -18,15 +19,9 @@ export function OfferSlides() {
       className="w-full "
     >
       <CarouselContent>
-        {Array.from({ length: 10 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/6">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
+      {productsData.map((product, index) => (
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+            <ProductCardOne product={product} />
           </CarouselItem>
         ))}
       </CarouselContent>

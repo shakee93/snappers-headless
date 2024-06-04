@@ -25,9 +25,9 @@ const slidesData: Slide[] = [
   {
     id: "2",
     slideFields: {
-      mainHeading: "Power and Performance, Anywhere",
-      subHeading: "Redmi Note 12 Pro (4G) - Your Ultimate Everyday Companion",
-      buttonText: "Buy Now",
+      mainHeading: "Enjoy Exciting Offers from Snappers",
+      subHeading: "Minimum order amount Rs.3500 T&C",
+      buttonText: "Go to Deals",
       buttonLink: "/xiaomi/xiaomi-redmi-note-12-pro-8gb-256gb",
       backgroundImage: "bg-slide-bg-1",
       featureImage: Feature1,
@@ -36,11 +36,11 @@ const slidesData: Slide[] = [
   {
     id: "3",
     slideFields: {
-      mainHeading: "Immersive Sound, Effortless Charging",
-      subHeading: "AirPods Pro 2 with MagSafe Charging",
-      buttonText: "Explore Products",
+      mainHeading: "Join Now, Receive Rs.200 Cashback.",
+      subHeading: "Limited Time Offer",
+      buttonText: "",
       buttonLink:
-        "/apple/airpods-pro-2nd-generation-with-magsafe-charging-case-usbc-2023",
+        "",
       backgroundImage: "bg-slide-bg-2",
       featureImage: Feature2,
     },
@@ -48,9 +48,9 @@ const slidesData: Slide[] = [
   {
     id: "4",
     slideFields: {
-      mainHeading: "Hot Picks of the Month!",
-      subHeading: "Explore Our Top-Selling Products",
-      buttonText: "Explore Now",
+      mainHeading: "10% off (max 500LKR) on orders over 3000LKR.",
+      subHeading: "Don't wait, offer ends shortly!",
+      buttonText: "Order Now",
       buttonLink: "/collections/all",
       backgroundImage: "bg-slide-bg-3",
       featureImage: Feature3,
@@ -60,10 +60,10 @@ const slidesData: Slide[] = [
 
 const Slide: React.FC<Slide> = ({ slideFields }) => {
   return (
-    <div className={` ${slideFields.backgroundImage} bg-cover h-[375px] w-full p-10 rounded-xl flex`}>
+    <div className={` ${slideFields.backgroundImage} bg-cover h-[380px] w-full p-10 rounded-lg flex`}>
       <div className="w-3/4 flex flex-col justify-center gap-5">
         <h1 className="text-5xl font-bold">{slideFields.mainHeading}</h1>
-        <h2>{slideFields.subHeading}</h2>
+        <h2 className="text-2xl">{slideFields.subHeading}</h2>
         <Link href={slideFields.buttonLink} className="bg-snap_blue w-max text-white px-5 py-2 rounded-lg">{slideFields.buttonText}</Link>
       </div>
       <div className="w-1/4 flex justify-center items-center">
