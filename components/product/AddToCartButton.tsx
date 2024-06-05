@@ -1,35 +1,27 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React from "react";
 import { HiShoppingBag } from "react-icons/hi2";
 import { HiTrash } from "react-icons/hi";
 
 interface AddToCartButtonProps {
   isInStock: boolean;
+  quantity: number;
+  handleAddToCart: () => void;
+  handleIncrement: () => void;
+  handleDecrement: () => void;
+  handleDelete: () => void;
 }
 
-const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isInStock }) => {
-  const [quantity, setQuantity] = useState(0);
-
-  const handleAddToCart = () => {
-    if (isInStock) {
-      setQuantity(1);
-    }
-  };
-
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  const handleDecrement = () => {
-    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0));
-  };
-
-  const handleDelete = () => {
-    setQuantity(0);
-  };
-
+const AddToCartButton: React.FC<AddToCartButtonProps> = ({
+  isInStock,
+  quantity,
+  handleAddToCart,
+  handleIncrement,
+  handleDecrement,
+  handleDelete
+}) => {
   return (
-    <div className="flex justify-center items-center text-sm py-2 mt-3">
+    <div className="flex justify-center items-center min-w-36 text-sm py-2">
       {quantity === 0 ? (
         <button
           className={`py-2 h-[35px] px-4 rounded-3xl w-full bg-snap_blue text-white flex justify-center items-center gap-2 ${
@@ -41,7 +33,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ isInStock }) => {
           <HiShoppingBag className="text-snap_yellow text-base" /> Add to Cart
         </button>
       ) : (
-        <div className="rounded-3xl  w-full text-white flex justify-between items-center">
+        <div className="rounded-3xl w-full text-white flex justify-between items-center">
           {quantity === 1 ? (
             <button
               className="bg-snap_blue h-[35px] w-full text-snap_yellow py-2 px-2 rounded-l-3xl flex justify-center items-center"

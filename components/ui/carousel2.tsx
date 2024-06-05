@@ -60,6 +60,7 @@ const Carousel = React.forwardRef<
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
+        loop: true,
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
       },
@@ -119,6 +120,23 @@ const Carousel = React.forwardRef<
         api?.off("select", onSelect)
       }
     }, [api, onSelect])
+
+    // Auto-slide functionality
+    React.useEffect(() => {
+      if (!api) {
+        return
+      }
+
+      const autoSlide = () => {
+        api.scrollNext()
+      }
+
+      const interval = setInterval(autoSlide, 3000) // Adjust the interval as needed
+
+      return () => {
+        clearInterval(interval)
+      }
+    }, [api])
 
     return (
       <CarouselContext.Provider
@@ -206,9 +224,9 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute  h-8 w-8 rounded-full border-snap_blue",
         orientation === "horizontal"
-          ? "-left-12 top-1/2 -translate-y-1/2"
+          ? "-left-5 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -216,7 +234,7 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <ArrowLeft className="h-4 w-4" />
+      <ArrowLeft className="h-4 w-4 text-snap_blue" />
       <span className="sr-only">Previous slide</span>
     </Button>
   )
@@ -235,9 +253,9 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full border-snap_blue",
         orientation === "horizontal"
-          ? "-right-12 top-1/2 -translate-y-1/2"
+          ? "-right-5 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
         className
       )}
@@ -245,7 +263,7 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <ArrowRight className="h-4 w-4" />
+      <ArrowRight className="h-4 w-4 text-snap_blue" />
       <span className="sr-only">Next slide</span>
     </Button>
   )

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lexend.className}>
-          <div className="relative">
+          <div className="relative bg-[#f5f6f5] bg-snappers-bg bg-cover">
             <Header />
             <div className="container  py-10">{children}</div>
             <Footer />
