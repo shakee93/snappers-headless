@@ -57,7 +57,7 @@ const ProductCardThree: React.FC<Props> = ({ product }) => {
 
   return (
     <Dialog>
-      <div className="flex border-2 border-dashed bg-white w-full p-3 rounded-xl">
+      <div className="flex border-2 relative border-dashed bg-white w-full p-1 rounded-xl">
         <DialogTrigger className="w-5/12">
           <div>
             <Image
@@ -71,7 +71,7 @@ const ProductCardThree: React.FC<Props> = ({ product }) => {
         </DialogTrigger>
         <div className="w-7/12">
           <DialogTrigger>
-            <div className="pt-2">
+            <div className="">
               <h2 className="font-medium leading-tight text-left text-base h-[40px] px-2">
                 {product.productName}
               </h2>
@@ -95,11 +95,13 @@ const ProductCardThree: React.FC<Props> = ({ product }) => {
             >
               {product.stockStatus}
             </div>
+            <div className="absolute top-2 left-2">
             <WishlistButton
               isInWishlist={isInWishlist}
               onToggleWishlist={handleToggleWishlist}
               loading={wishlistLoading}
             />
+            </div>
           </div>
           <div>
             <AddToCartButton

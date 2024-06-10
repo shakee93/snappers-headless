@@ -14,6 +14,7 @@ import HeroFeaturesSection from "@/components/homepage/HeroFeaturesSection";
 import { Button } from "@/components/ui/button";
 import { FaChevronCircleRight, FaChevronCircleLeft } from "react-icons/fa";
 import VerticalProductGrid from "@/components/homepage/VerticalProductGrid";
+import ProductSearch from "@/components/global/ProductSearch";
 
 export default function Home() {
   return (
@@ -55,12 +56,17 @@ export default function Home() {
         className="flex gap-5 p-5 border-[1.5px] rounded-xl"
         id="search-section"
       >
-        <div className="w-10/12 border-[1.5px] p-2 rounded-2xl">Search </div>
+        <div className="w-10/12 border-[1.5px] p-2 rounded-2xl">
+          <ProductSearch />
+        </div>
         <div className="w-2/12 border-[1.5px] p-2 rounded-2xl">
           Wishlist / Deals
         </div>
       </div>
-      <div className="p-5 border-[1.5px] rounded-lg flex gap-5 bg-white/50 shadow-xl" id="best-deals">
+      <div
+        className="p-5 border-[1.5px] rounded-lg flex gap-5 bg-white/50 shadow-xl"
+        id="best-deals"
+      >
         <div className="p-5 w-3/12 border-[1.5px] rounded-lg bg-[#548C2F]">
           <Image
             src={FeatureDeals}
