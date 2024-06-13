@@ -34,10 +34,10 @@ export default function Home() {
         </div>
       </div>
       <div
-        className="flex gap-5 p-5 bg-gradient-to-r from-[#FF585C] to-[#F1E92A] border-[1.5px] rounded-xl"
+        className="flex gap-5 p-5 bg-gradient-to-r from-[#FF585C] shadow-xl to-[#F1E92A] border-[1.5px] rounded-xl"
         id="offer-section"
       >
-        <div className="w-3/12 p-2 flex flex-col justify-center gap-3">
+        <div className="w-3/12 p-2 flex flex-col justify-center gap-3  ">
           <div className="font-bold text-2xl text-white leading-tight">
             Check out our Snap Deals
           </div>
@@ -128,10 +128,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="bg-white/50 shadow-xl rounded-xl">
         <NewsletterSection />
       </div>
-      <div className="p-10 w-full h-full border-[1.5px] rounded-lg flex flex-col gap-5 mb-28">
+      <div className="p-10 w-full h-full border-[1.5px]  bg-white/50 shadow-xl rounded-xl flex flex-col gap-5 mb-28">
         <div>
           <SectionHeader
             className="categories-heading"
