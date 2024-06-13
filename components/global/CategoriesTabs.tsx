@@ -16,9 +16,10 @@ interface Categories {
 
 interface CategoriesTabsProps {
   categories: Categories;
+  isAbsolute: Boolean;
 }
 
-const CategoriesTabs: React.FC<CategoriesTabsProps> = ({ categories }) => {
+const CategoriesTabs: React.FC<CategoriesTabsProps> = ({ categories, isAbsolute }) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [isMouseOverSubcategories, setIsMouseOverSubcategories] =
     useState<boolean>(false);
@@ -42,7 +43,7 @@ const CategoriesTabs: React.FC<CategoriesTabsProps> = ({ categories }) => {
   };
 
   return (
-    <div className="absolute top-0">
+    <div className={`${isAbsolute ? 'absolute top-0' : ''}`}>
       <div className="w-full   flex z-50 " onMouseLeave={handleMouseLeave}>
         <div className="flex flex-col gap-1 pt-4">
           <div className="bg-snap_blue rounded-xl text-white  flex justify-center items-center py-2 gap-2">

@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={lexend.className}>
         <div className="relative">
           <Header />
-          <div className="bg-snappers-bg bg-cover">
+          <div className="bg-snappers-bg bg-cover h-full md:h-screen">
             {children}
           </div>
           {/* <Footer /> */}
