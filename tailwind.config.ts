@@ -82,6 +82,7 @@ const config = {
         'slide-bg-2': "url('../public/slider-bg-2.png')",
         'slide-bg-3': "url('../public/slider-bg-3.png')",
         'snappers-bg': "url('../public/Snappers-bg.png')",
+        'aboutus-frame': "url('../public/aboutusframe.png')",
       },
     },
   },

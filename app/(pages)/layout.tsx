@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/global/header";
 import Footer from "@/components/global/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Snappers",
@@ -18,12 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-          <div className="relative">
-            <Header />
-            <div className="container  py-10">{children}</div>
-            <Footer />
+      <body className={lexend.className}>
+        <div className="relative">
+          <Header />
+          <div className="bg-snappers-bg bg-cover">
+            {children}
           </div>
+          {/* <Footer /> */}
+        </div>
       </body>
     </html>
   );

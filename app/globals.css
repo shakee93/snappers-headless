@@ -54,3 +54,13 @@
 .remove-arrow {
     -moz-appearance: textfield;
 }
+
+.drop-cap {
+  float: left;
+  font-size: 4rem;
+  line-height: 1;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  font-weight: 500px;
+  color: #071c43;
+}
