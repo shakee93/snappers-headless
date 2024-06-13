@@ -24,7 +24,7 @@ export default function CardsSection() {
     return (
         <>
 
-            <div className="flex flex-col gap-2 md:flex-row">
+            <div className="flex flex-col gap-2 my-4 md:flex-row">
                 {stats.map((stat, index) => (
                     <div key={index} className="w-full rounded-2xl p-4 text-center md:w-1/4" style={{ backgroundColor: statColor[index] }}>
                         <div className="flex flex-col justify-center items-center">
